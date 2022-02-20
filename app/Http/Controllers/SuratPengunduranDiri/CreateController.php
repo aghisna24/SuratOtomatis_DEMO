@@ -16,6 +16,10 @@ class CreateController extends Controller
 
     public function index(Request $request)
     {
+        return view('ww');
+    }
+    public function submit(Request $request)
+    {
         $this->_spd->created($request);
 
         $request->session()->flash('status','Berhasil Menambahkan Data');
