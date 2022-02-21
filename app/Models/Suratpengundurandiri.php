@@ -9,6 +9,7 @@ class Suratpengundurandiri extends Model
 {
     use SoftDeletes;
 
+    protected $table = 'suratpengundurandiris';
     protected $fillable = [
         'nama_lengkap',
         'nama_perusahaan',

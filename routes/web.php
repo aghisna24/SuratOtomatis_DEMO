@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('sukses', 'SuksesController@sukses')->name('sukses');
+Route::get('pesan', 'SuratPengunduranDiri\CreateController@index')->name('pesan');
+Route::post('index/submit', 'SuratPengunduranDiri\CreateController@submit')->name('index.submit');

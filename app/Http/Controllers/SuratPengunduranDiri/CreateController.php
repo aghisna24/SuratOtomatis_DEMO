@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Suratpengundurandiri;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Repositories\SuratpengundurandiriRepository;
+use Exception;
 
 class CreateController extends Controller
 {
@@ -16,13 +17,16 @@ class CreateController extends Controller
 
     public function index(Request $request)
     {
-        return view('ww');
+        return view('pesan');
     }
+
     public function submit(Request $request)
     {
-        $this->_spd->created($request);
-
-        $request->session()->flash('status','Berhasil Menambahkan Data');
-        return redirect(route('ss');
+        try {
+            \App\Models\Suratpengundurandiri::create($request->all());
+        } catch (Exception $exception) {
+            return redirect('pesan')->with(['error' => 'Data Gagal Dimasukan']);
+        }
+        return redirect('sukses');
     }
 }

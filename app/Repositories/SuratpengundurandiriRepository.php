@@ -1,5 +1,7 @@
 <?php
+
 namespace APP\Repositories;
+
 use APP\Models\Suratpengundurandiri;
 
 class SuratpengundurandiriRepository
@@ -10,7 +12,7 @@ class SuratpengundurandiriRepository
         return $base->get();
     }
 
-    public function created($request)
+    public function create($request)
     {
         $spd = new Suratpengundurandiri;
         $spd->nama_lengkap = $request->nama_lengkap;
