@@ -1,4 +1,4 @@
-@extends('index')
+@extends('SuratMendudukiJabatan\index1')
 
 @section('content')
 <div>

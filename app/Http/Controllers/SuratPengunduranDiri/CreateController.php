@@ -17,7 +17,7 @@ class CreateController extends Controller
 
     public function index(Request $request)
     {
-        return view('pesan');
+        return view('SuratPengunduranDiri\pesan');
     }
 
     public function submit(Request $request)
