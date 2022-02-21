@@ -37,7 +37,7 @@
                         </div>
                         <div class="col-lg-6">
                             <h2>Nama Pemohon</h2>
-                            <input class="form-control" type="datetime-local" placeholder="Silahkan Masukan Nama" aria-label="default input example" name="nama_yang_menyatakan">
+                            <input class="form-control" type="text" placeholder="Silahkan Masukan Nama" aria-label="default input example" name="nama_yang_menyatakan">
                         </div>
                         <div class="col-lg-6">
                             <h2>Nomor NIP Pemohon</h2>
