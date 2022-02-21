@@ -20,10 +20,10 @@
 <body>
     <div class="container text-center">
         <div class="mt-4">
-            <Image src="assets/img/success.png" width="500" />
+            <img src="assets/img/success.png" width="500" />
             <h2>Data Berhasil Dimasukan</h2>
             <p>Terima Kasih</p>
-            <a type="button" class="btn btn-danger" href="pesan">
+            <a type="button" class="btn btn-danger" href="message">
                 KEMBALI
             </a>
             <button type="button" class="btn btn-primary" data-toggle="modal" data-bs-target="#staticBackdrop"">PREVIEW</button>
