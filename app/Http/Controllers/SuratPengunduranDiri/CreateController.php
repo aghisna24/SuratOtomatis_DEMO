@@ -29,4 +29,14 @@ class CreateController extends Controller
         }
         return redirect('sukses');
     }
+
+
+    //Masih belum jalan 
+    public function print_pdf(Request $request)
+    {
+    	$row = Pegawai::all();
+ 
+    	$pdf = PDF::loadview('hasil_surat_pdf',['pegawai'=>$pegawai]);
+    	return $pdf->download('hasil-surat-pengundurandiri-pdf');
+    }
 }
