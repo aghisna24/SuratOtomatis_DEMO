@@ -4,16 +4,13 @@ namespace App\Http\Controllers\Suratpengundurandiri;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Repositories\SuratpengundurandiriRepository;
 use Exception;
+use Illuminate\Support\Facades\DB;
+use PDF;
+use App\Models\Suratpengundurandiri;
 
 class CreateController extends Controller
 {
-    protected $_spd;
-    public function _construct(SuratpengundurandiriRepository $spd)
-    {
-        $this->_spd = $spd;
-    }
 
     public function index(Request $request)
     {
@@ -29,19 +26,17 @@ class CreateController extends Controller
         }
         return redirect('sukses');
     }
-
-
-
-    //Read
-    public function dummy(Request $request){
-       
-       $letter = DB::table('suratpengundurandiris')->latest();
-        return view('SuratPengunduranDiri\result_letter', ['suratpengundurandiris' => $letter]);  
+    public function edit($id)
+    {
+        $spd = \App\Models\Suratpengundurandiri::find($id);
+        return view('Suratpengundurandiri\edit', ['edit' => $spd]);
     }
 
-    public function letter(){
-        
-        $pdf = \PDF::loadview('SuratPengunduranDiri\result_letter');
-        
-        return $pdf->stream('letter.pdf');}
+    public function letter()
+    {
+        $id = 1;
+        $data_SPD = \App\Models\Suratpengundurandiri::orderBy('id', 'desc')->limit($id)->get();
+        $pdf = PDF::loadview('SuratPengunduranDiri\result_letter', ['data_spd' => $data_SPD]);
+        return $pdf->stream('letter.pdf');
+    }
 }

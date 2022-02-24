@@ -215,30 +215,33 @@ section.footer h3:nth-child(2) {
 <body>
 <section class="body-letter">
     
+    @foreach($data_spd as $c)
     <section class="header">
         <h1>SURAT PENGUNDURAN DIRI</h1>
         <div class="date-letter">
-            <h3>tempat, waktu diterbitkan </h3>
+            
+            <h3>{{$c->tempat_penerbit}}, {{$c->waltu_terbitan}} </h3>
+            
         </div>
     </section>
     <section class="to">
         <h3>Kepada Yth.</h3>
-        <h3>penerima</h3>
+        <h3>{{$c->penerima_surat}}</h3>
         <h3>Di tempat</h3>
     </section>
     <section class="text-letter">
         <h3>Dengan Hormat,</h3>
-        <p>Melalui surat ini saya  nama penulis bermaksud untuk mengundurkan diri sebagai jabatan
-        di perusahaan <br> Indonesia terhitung sejak tanggal diterbitkan.</p>
-        <p>Saya sangat berterimakasih atas kesempatan yang telah diberikan kepada saya untuk bekerja di perusahaab, saya juga meminta maaf kepada seluruh karyawan dan pimpinan apabila terdapat kesalahan yang telah saya lakukan selama bekerja.</p>
+        <p>Melalui surat ini saya  {{$c->nama_lengkap}} bermaksud untuk mengundurkan diri sebagai {{$c->jabatan}}
+        di {{$c->nama_perusahaan}}<br> Indonesia terhitung sejak tanggal {{$c->tanggal_pengunduran}}.</p>
+        <p>Saya sangat berterimakasih atas kesempatan yang telah diberikan kepada saya untuk bekerja di {{$c->nama_perusahaan}}, saya juga meminta maaf kepada seluruh karyawan dan pimpinan apabila terdapat kesalahan yang telah saya lakukan selama bekerja.</p>
         <p>Demikian Surat Pengunduran Diri ini saya tulis dengan sebenar-benarnya dan penuh kesadaran. saya 
                 berharap perusahaan dapat terus berjaya dan memperoleh yang terbaik</p>
     </section>
     <section class="footer">
         <h3>hormat saya</h3>
-        <h3>nama penulis</h3>
+        <h3>{{$c->nama_lengkap}}</h3>
     </section>
-  
+    @endforeach
 </section>
 </body>
 </html>

@@ -17,8 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('sukses', 'SuratPengunduranDiri\SuksesController@sukses')->name('sukses');
 Route::get('pesan', 'SuratPengunduranDiri\CreateController@index')->name('pesan');
 Route::post('index/submit', 'SuratPengunduranDiri\CreateController@submit')->name('index.submit');
-
-Route::get('result_letter', 'SuratPengunduranDiri\CreateController@dummy')->name('dummy');
+Route::get('/pesan/{id}/edit', 'SuratPengunduranDiri\CreateController@edit')->name('edit');
 Route::get('result_letter', 'SuratPengunduranDiri\CreateController@letter')->name('letter');
 
 
