@@ -88,7 +88,8 @@ html,
 body {
     font-family: 'poppins', 'open-sans';
     font-weight: 400;
-    font-size: 16px;
+    font-size: 16px;    
+    background : none;  
 }
 
 body {
