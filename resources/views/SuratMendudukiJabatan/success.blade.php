@@ -23,10 +23,12 @@
             <img src="assets/img/success.png" width="500" />
             <h2>Data Berhasil Dimasukan</h2>
             <p>Terima Kasih</p>
-            <a type="button" class="btn btn-danger" href="message">
+            <a type="button" class="btn btn-danger" href="edit">
                 KEMBALI
             </a>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-bs-target="#staticBackdrop"">PREVIEW</button>
+            <a type="button" class="btn btn-primary" href="result_letter">
+                PREVIEW
+            </a>
         </div>
     </div>
 
