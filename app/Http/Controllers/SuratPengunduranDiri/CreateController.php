@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Exception;
 use Illuminate\Support\Facades\DB;
+use PDF;
 
 class CreateController extends Controller
 {
@@ -25,23 +26,11 @@ class CreateController extends Controller
         return redirect('sukses');
     }
 
-    //Read
-    // public function dummy()
-    // {
-    //     // return view('SuratPengunduranDiri\result_letter');
-    //     $data_SPD = \App\Models\Suratpengundurandiri::all();
-    //     return view('calon.pendaftaran', ['data_spd' => $data_SPD]);
-
-
-    //     // $letter = \App\Models\Suratpengundurandiri::latest();
-    //     // return view('SuratPengunduranDiri\result_letter', ['suratpengundurandiris' => $letter]);
-    // }
-
     public function letter()
     {
         $id = 1;
         $data_SPD = \App\Models\Suratpengundurandiri::orderBy('id', 'desc')->limit($id)->get();
-        $pdf = \PDF::loadview('SuratPengunduranDiri\result_letter', ['data_spd' => $data_SPD]);
+        $pdf = PDF::loadview('SuratPengunduranDiri\result_letter', ['data_spd' => $data_SPD]);
         return $pdf->stream('letter.pdf');
     }
 }
