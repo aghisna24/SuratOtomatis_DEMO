@@ -42,5 +42,5 @@ class CreateController extends Controller
 
     public function letter(){
         $pdf = \PDF::loadview('SuratPengunduranDiri\result_letter');
-        return $pdf->download('letter.pdf');}
+        return $pdf->stream('letter.pdf');}
 }
