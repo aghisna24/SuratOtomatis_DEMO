@@ -12,6 +12,11 @@ class SuratpengundurandiriRepository
         return $base->get();
     }
 
+    public function getAllPosts($request)
+    {
+        
+    }
+
     public function create($request)
     {
         $spd = new Suratpengundurandiri;

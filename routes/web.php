@@ -17,7 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('sukses', 'SuratPengunduranDiri\SuksesController@sukses')->name('sukses');
 Route::get('pesan', 'SuratPengunduranDiri\CreateController@index')->name('pesan');
 Route::post('index/submit', 'SuratPengunduranDiri\CreateController@submit')->name('index.submit');
-Route::get('print_pdf', 'SuratPengunduranDiri\CreateController@cetak_pdf');
+
+Route::get('result_letter', 'SuratPengunduranDiri\CreateController@dummy')->name('dummy');
+Route::get('sukses', 'SuratPengunduranDiri\CreateController@letter')->name('letter');
+
 
 Route::get('success', 'SuratMendudukiJabatan\SuccessController@success')->name('success');
 Route::get('message', 'SuratMendudukiJabatan\CreateController@index1')->name('message');
