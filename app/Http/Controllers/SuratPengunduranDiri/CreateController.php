@@ -31,12 +31,16 @@ class CreateController extends Controller
     }
 
 
-    //Masih belum jalan 
-    public function print_pdf(Request $request)
-    {
-    	$row = Pegawai::all();
- 
-    	$pdf = PDF::loadview('hasil_surat_pdf',['pegawai'=>$pegawai]);
-    	return $pdf->download('hasil-surat-pengundurandiri-pdf');
+
+    //Read
+    public function dummy(){
+       return view('SuratPengunduranDiri\result_letter');
+
+       // $letter = DB::table('suratpengundurandiris')->latest();
+        //return view('SuratPengunduranDiri\result_letter', ['suratpengundurandiris' => $letter]);  
     }
+
+    public function letter(){
+        $pdf = \PDF::loadview('SuratPengunduranDiri\result_letter');
+        return $pdf->download('letter.pdf');}
 }
