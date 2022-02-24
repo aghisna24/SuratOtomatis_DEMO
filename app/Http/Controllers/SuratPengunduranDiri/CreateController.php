@@ -29,4 +29,19 @@ class CreateController extends Controller
         }
         return redirect('sukses');
     }
+
+
+
+    //Read
+    public function dummy(Request $request){
+       
+       $letter = DB::table('suratpengundurandiris')->latest();
+        return view('SuratPengunduranDiri\result_letter', ['suratpengundurandiris' => $letter]);  
+    }
+
+    public function letter(){
+        
+        $pdf = \PDF::loadview('SuratPengunduranDiri\result_letter');
+        
+        return $pdf->stream('letter.pdf');}
 }

@@ -18,6 +18,10 @@ Route::get('sukses', 'SuratPengunduranDiri\SuksesController@sukses')->name('suks
 Route::get('pesan', 'SuratPengunduranDiri\CreateController@index')->name('pesan');
 Route::post('index/submit', 'SuratPengunduranDiri\CreateController@submit')->name('index.submit');
 
+Route::get('result_letter', 'SuratPengunduranDiri\CreateController@dummy')->name('dummy');
+Route::get('result_letter', 'SuratPengunduranDiri\CreateController@letter')->name('letter');
+
+
 Route::get('success', 'SuratMendudukiJabatan\SuccessController@success')->name('success');
 Route::get('message', 'SuratMendudukiJabatan\CreateController@index1')->name('message');
 Route::post('index1/submit1', 'SuratMendudukiJabatan\CreateController@submit1')->name('index1.submit1');
