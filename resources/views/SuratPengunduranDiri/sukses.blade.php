@@ -26,7 +26,7 @@
             <a type="button" class="btn btn-danger" href="pesan">
                 KEMBALI
             </a>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-bs-target="#staticBackdrop"">PREVIEW</button>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-bs-target="#staticBackdrop" href="cetak">PREVIEW</button>
         </div>
     </div>
 
