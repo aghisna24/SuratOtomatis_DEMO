@@ -157,7 +157,6 @@ section.to h3 {
 
     color: #000000;
 }
-
 section.text-letter {
     margin-top: 27px;
     margin-left: 23px;
@@ -215,7 +214,6 @@ section.footer h3:nth-child(2) {
 <body>
 <section class="body-letter">
     
-
     <section class="header">
         <h1>SURAT PENGUNDURAN DIRI</h1>
         <div class="date-letter">

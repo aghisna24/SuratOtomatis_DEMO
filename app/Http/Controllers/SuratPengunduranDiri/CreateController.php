@@ -33,14 +33,15 @@ class CreateController extends Controller
 
 
     //Read
-    public function dummy(){
-       return view('SuratPengunduranDiri\result_letter');
-
-       // $letter = DB::table('suratpengundurandiris')->latest();
-        //return view('SuratPengunduranDiri\result_letter', ['suratpengundurandiris' => $letter]);  
+    public function dummy(Request $request){
+       
+       $letter = DB::table('suratpengundurandiris')->latest();
+        return view('SuratPengunduranDiri\result_letter', ['suratpengundurandiris' => $letter]);  
     }
 
     public function letter(){
+        
         $pdf = \PDF::loadview('SuratPengunduranDiri\result_letter');
+        
         return $pdf->stream('letter.pdf');}
 }
