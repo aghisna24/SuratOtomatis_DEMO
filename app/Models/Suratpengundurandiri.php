@@ -19,4 +19,5 @@ class Suratpengundurandiri extends Model
         'tempat_penerbit',
         'waltu_terbitan'
     ];
+    
 }
