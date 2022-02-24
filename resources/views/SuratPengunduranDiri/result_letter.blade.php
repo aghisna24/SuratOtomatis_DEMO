@@ -98,10 +98,11 @@ body {
 }
 
 section.body-letter {
-    align-items: center;
-    width: 595px;
-    height: 842px;
-    background-color: white;
+    background: white;
+    padding: calc(2.54cm);
+    width: 21cm;
+    height: 29cm;
+    margin: auto;
 }
 
 section.header {
