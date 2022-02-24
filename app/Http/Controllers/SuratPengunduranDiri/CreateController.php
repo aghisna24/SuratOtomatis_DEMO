@@ -4,16 +4,11 @@ namespace App\Http\Controllers\Suratpengundurandiri;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Repositories\SuratpengundurandiriRepository;
 use Exception;
+use Illuminate\Support\Facades\DB;
 
 class CreateController extends Controller
 {
-    protected $_spd;
-    public function _construct(SuratpengundurandiriRepository $spd)
-    {
-        $this->_spd = $spd;
-    }
 
     public function index(Request $request)
     {
@@ -30,17 +25,23 @@ class CreateController extends Controller
         return redirect('sukses');
     }
 
-
-
     //Read
-    public function dummy(){
-       return view('SuratPengunduranDiri\result_letter');
+    // public function dummy()
+    // {
+    //     // return view('SuratPengunduranDiri\result_letter');
+    //     $data_SPD = \App\Models\Suratpengundurandiri::all();
+    //     return view('calon.pendaftaran', ['data_spd' => $data_SPD]);
 
-       // $letter = DB::table('suratpengundurandiris')->latest();
-        //return view('SuratPengunduranDiri\result_letter', ['suratpengundurandiris' => $letter]);  
+
+    //     // $letter = \App\Models\Suratpengundurandiri::latest();
+    //     // return view('SuratPengunduranDiri\result_letter', ['suratpengundurandiris' => $letter]);
+    // }
+
+    public function letter()
+    {
+        $id = 1;
+        $data_SPD = \App\Models\Suratpengundurandiri::orderBy('id', 'desc')->limit($id)->get();
+        $pdf = \PDF::loadview('SuratPengunduranDiri\result_letter', ['data_spd' => $data_SPD]);
+        return $pdf->stream('letter.pdf');
     }
-
-    public function letter(){
-        $pdf = \PDF::loadview('SuratPengunduranDiri\result_letter');
-        return $pdf->stream('letter.pdf');}
 }
