@@ -84,6 +84,7 @@ figcaption {
 
 }
 
+
 html,
 body {
     font-family: 'poppins', 'open-sans';
@@ -95,14 +96,19 @@ body {
 body {
     overflow-x: hidden;
     overflow: hidden;
-    background-color: #000000;
+    /* background-color: #000000; */
+    margin-top: 2cm;
+    margin-left: 2cm;
+    margin-right: 2cm;
+    margin-bottom: 2cm;
 }
+
+
 
 section.body-letter {
     background: white;
     padding: calc(2.54cm);
-    width: 21cm;
-    height: 29cm;
+    
     margin: auto;
 }
 
